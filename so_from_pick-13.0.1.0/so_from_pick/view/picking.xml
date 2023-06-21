@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- <record model="ir.ui.view" id="sale_order_form_inherit_for_add_sale_id">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']/button[@name='action_view_picking']" position="attributes">
+                <attribute name="attrs">{'invisible': [('picking_ids','=',[])]}</attribute>
+            </xpath>
+        </field>
+    </record> -->
+
+    <record model="ir.ui.view" id="view_stock_picking_extended_for_add_create_po_btn">
+        <field name="name">stock.picking.for.create.so.view</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+             <xpath expr="//header" position="inside">
+                <button name="create_so_btn" class="oe_highlight" type="object"  id="create_po_btn" string="Create SO" />
+            </xpath>
+            <div name="button_box" position="inside">
+                <button type="object"  name="action_view_sale_order"
+                    class="oe_stat_button"  string="Sale Order" icon="fa-line-chart" >
+                </button>
+            </div>
+        </field>
+    </record>
+</odoo>
